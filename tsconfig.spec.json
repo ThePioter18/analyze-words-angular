@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "https://angular-vaqfeh.stackblitz.io",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

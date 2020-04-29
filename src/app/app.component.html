@@ -1,0 +1,71 @@
+<hello name="{{ name }}"></hello>
+<p>
+	Start editing to see some magic happen :)
+</p>
+
+<div class="form-analyze">
+
+	<mat-form-field class="example-full-width">
+		<mat-label>Enter the text</mat-label>
+		<input matInput placeholder="Ex. Ala ma kota" [(ngModel)]="textbox">
+  </mat-form-field>
+
+		<mat-form-field>
+			<mat-label>Select an option</mat-label>
+			<mat-select [(ngModel)]="selectedNum">
+
+				<ng-container *ngFor="let number of numbers">
+					<mat-option value={{number}}>
+						{{number}}
+					</mat-option>
+				</ng-container>
+
+			</mat-select>
+		</mat-form-field>
+
+		<p>You selected: {{selectedNum}}</p>
+
+		<mat-form-field>
+			<mat-label>Panel color</mat-label>
+			<mat-select [(ngModel)]="selectedColor">
+				<ng-container *ngFor="let color of colors">
+					<mat-option value={{color}}>
+						{{color}}
+					</mat-option>
+				</ng-container>
+			</mat-select>
+		</mat-form-field>
+
+		<button mat-raised-button color="primary" (click)="addData()">Add</button>
+
+</div>
+<mat-divider></mat-divider>
+
+<div class="collection">
+
+	<ng-container *ngFor="let sentence of sentences; let i = index">
+    
+		<mat-card class="list-analyze">
+
+			<li class="collection-item">
+				<span>
+          {{ sentence.sentence }}
+        </span>
+				<p>Numer słowa w zdaniu:</p>
+				{{sentence.numberWord}}
+				<p>Kolor dla wybranego słowa:</p>
+				<span>{{sentence.colorWord}}</span>
+			</li>
+			<button class="btn-analyze" mat-raised-button color="primary" (click)="Analyze(sentence)">Analyze</button>
+		</mat-card>
+
+	</ng-container>
+
+</div>
+
+<mat-list class="list" role="list">
+  <mat-list-item role="listitem">
+    <span id="color">{{ endText }}</span>
+  </mat-list-item>
+</mat-list>
+

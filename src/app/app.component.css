@@ -1,0 +1,26 @@
+p {
+  font-family: Lato;
+  background-color: bisque;
+}
+
+.collection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collection-item{
+  margin-top: 20px;
+}
+
+.form-analyze {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.list-analyze, .btn-analyze {
+  margin-top: 15px;
+}
+.collection-item {
+  list-style: none;
+}
